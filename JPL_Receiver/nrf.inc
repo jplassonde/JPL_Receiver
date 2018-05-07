@@ -1,0 +1,54 @@
+;------------------------------------------------------
+; Symbolic names for the nRF24L01
+; Converted with Bash from Juho Vesanen's nRF24L01.h
+; (C) Juho Vesanen, Released under MIT license.
+
+
+; SPI commands of the nRF24L01
+R_REGISTER:		EQU 0x00
+W_REGISTER:		EQU 0x20
+R_RX_PL_WID:	EQU 0x60
+R_RX_PAYLOAD:	EQU 0x61
+W_TX_PAYLOAD:	EQU 0xA0
+FLUSH_TX:		EQU 0xE1
+FLUSH_RX:		EQU 0xE2
+REUSE_TX_PL:	EQU 0xE3
+
+; Register addresses
+CONFIG:		 	EQU 0x00
+EN_AA:		 	EQU 0x01
+EN_RXADDR:		EQU 0x02
+SETUP_AW:		EQU 0x03
+SETUP_RETR:		EQU 0x04
+RF_CH:			EQU 0x05
+RF_SETUP:		EQU 0x06
+STATUS:			EQU 0x07
+OBSERVE_TX:		EQU 0x08
+CD:		 		EQU 0x09
+RX_ADDR_P0:		EQU 0x0A
+RX_ADDR_P1:		EQU 0x0B
+RX_ADDR_P2:		EQU 0x0C
+RX_ADDR_P3:		EQU 0x0D
+RX_ADDR_P4:		EQU 0x0E
+RX_ADDR_P5:		EQU 0x0F
+TX_ADDR:		EQU 0x10
+RX_PW_P0:		EQU 0x11
+RX_PW_P1:		EQU 0x12
+RX_PW_P2:		EQU 0x13
+RX_PW_P3:		EQU 0x14
+RX_PW_P4:		EQU 0x15
+RX_PW_P5:		EQU 0x16
+FIFO_STATUS:	EQU 0x17
+DYNPD:		 	EQU 0x1c
+FEATURE:		EQU 0x1d
+
+; IRQ interrupt masks
+MASK_RX_DR:		EQU 0x40
+MASK_TX_DS:		EQU 0x20
+MASK_MAX_RT:	EQU 0x10
+
+; useful STATUS register masks
+RX_DR_MASK:		EQU 0x40
+TX_DS_MASK:		EQU 0x20
+TX_FULL_MASK:	EQU 0x01
+
