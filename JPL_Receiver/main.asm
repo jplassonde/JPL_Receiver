@@ -1,6 +1,15 @@
-;-----------------------------------------------------------------------------
-; Assembly main line
-;-----------------------------------------------------------------------------
+;----------------------------------------------------------------------------
+; Exercise 4: nRF Receiver
+; File: main.asm
+; =====================================
+; Description: This program receives sensor data from the transmitters
+; and print them along with their respective pipe number on the LCD screen.
+;
+;
+; Author: Jean-Philippe Lassonde #1504236
+; Date: April 6th 2018
+; Course: TX00CS03 - Sensors and Interfaces 
+;----------------------------------------------------------------------------
 
 include "m8c.inc"       ; part specific constants and macros
 include "memory.inc"    ; Constants & macros for SMM/LMM and Compiler
@@ -10,7 +19,7 @@ include "nrf.inc"		; Symbolic names for nRF's commands and registers addresses
 export _main
 export rxrdy_flag
 
-;; GPIO macros
+;; GPIO macros / Superfluous since it turns out they are auto-generated in PSoCGPIOINT.inc
 macro SetCE_High
 	or		[Port_0_Data_SHADE], 2h				; OR CE pin with shadow reg
 	mov		A, [Port_0_Data_SHADE]				; Load shadow reg in A
@@ -537,7 +546,7 @@ Write_To_LCD:
 	swap A, sp	; Restore SP / get rid of string
 	ret
 	
-Read_All_Regs:	; Get a register dump on the logic analyzer
+Read_All_Regs:	; Get a register dump on the logic analyzer for debugging
 	mov A, 0
 .read_loop:	
 	push a
